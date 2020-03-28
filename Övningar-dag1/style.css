@@ -20,6 +20,17 @@ p{
     right: 10px;
 
 }
+.Books {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    }
+
+div .centerText{
+    text-align: center;
+}
+
 a{
     font-size: 20px;
     font-weight: bold;
@@ -39,5 +50,26 @@ header {
     margin-right: -10px;
     background-color: darkgray;
 
+}
+
+body {
+    font-family: Helvetica, Arial, sans-serif;
+}
+legend {
+    font-weight: bold;
+}
+div.tableContainer {
+    display: table;
+    border-spacing: 5px;
+}
+div.tableRow {
+    display: table-row;
+}
+div.tableRow label {
+    display: table-cell;
+    text-align: right;
+}
+div.tableRow input {
+    display: table-cell;
 }
 

@@ -1,0 +1,19 @@
+{
+  "notebooks": [
+    {
+      "notebookName": "Moleskin 1",
+      "notebookColor": "Color: Brown",
+      "notebookPrice": "80kr"
+    },
+    {
+      "notebookName": "Moleskin 2",
+      "notebookColor": "Color: Green",
+      "notebookPrice": "80kr"
+    },
+    {
+      "notebookName": "Moleskin 3",
+      "notebookColor": "Color: Red",
+      "notebookPrice": "80kr"
+    }
+  ]
+}

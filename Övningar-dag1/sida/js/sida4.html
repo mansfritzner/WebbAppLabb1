@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Shoppingcart</title>
+    <link rel="stylesheet" type="text/css" href="../../style.css">
+</head>
+
+<body>
+
+<header>
+    <h1>
+        Shoppingcart
+    </h1>
+</header>
+
+<p id="output"></p>
+<form id="formReg">
+    <p><label>Name: </label> <input type="text" id="txtName" /></p>
+    <p><input type="Submit" value="OK" /></p>
+
+</form>
+
+<script src="kundvagn.js"></script>
+
+<div id="content"></div>
+<script src="ajax-test.js"></script>
+
+
+<form>
+    <fieldset>
+        <legend>Add a new order</legend>
+        <div class="tableContainer">
+            <div class="tableRow">
+                <label for="Notebook">Notebook </label>
+                <input type="text" id="Notebook" size="35" placeholder="Moleskin 1">
+            </div>
+            <div class="tableRow">
+                <label for="who">Whos it for</label>
+                <input type="text" id="who" placeholder="Jerry">
+            </div>
+            <div class="tableRow">
+                <label for="todaysDate">Date of order </label>
+                <input type="date" id="todaysDate">
+            </div>
+            <div class="tableRow">
+                <label for="submit"></label>
+                <input type="button" id="submit" value="submit">
+            </div>
+        </div>
+    </fieldset>
+</form>
+
+</body>
+</html>
