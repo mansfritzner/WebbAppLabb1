@@ -1,3 +1,10 @@
+function Order(task, who, dueDate) {
+    this.task = task;
+    this.who = who;
+    this.dueDate = dueDate;
+    this.done = false;
+}
+
 var todos = new Array();
 
 window.onload = init;
@@ -10,7 +17,7 @@ function init() {
 
 function getTodoData() {
     var request = new XMLHttpRequest();
-    request.open("GET", "todo.json");
+    request.open("GET", "data/todo.json");
     request.onreadystatechange = function() {
         if (this.readyState == this.DONE && this.status == 200) {
             if (this.responseText) {
@@ -52,16 +59,19 @@ function addTodosToPage() {
 }
 
 function getFormData() {
-    var task = document.getElementById("Notebook").value;
-    if (checkInputText(Notebook, "Please enter a task")) return;
+    var task = document.getElementById("task").value;
+    if (checkInputText(task, "Please enter a task")) return;
 
     var who = document.getElementById("who").value;
     if (checkInputText(who, "Please enter a person to do the task")) return;
 
-    var date = document.getElementById("todaysDate").value;
-    if (checkInputText(date, "Please enter todays Date")) return;
+    var date = document.getElementById("dueDate").value;
+    if (checkInputText(date, "Please enter a due date")) return;
 
-    console.log("New task: " + Notebook + ", for: " + who + ", by: " + date);
+    console.log("New task: " + task + ", for: " + who + ", by: " + date);
+    var todoItem = new Order(task, who, date);
+    todos.push(todoItem);
+    addTodoToPage(todoItem);
 }
 
 function checkInputText(value, msg) {
@@ -70,4 +80,13 @@ function checkInputText(value, msg) {
         return true;
     }
     return false;
+}
+
+function addTodoToPage(todoItem) {
+    var ul = document.getElementById("todoList");
+    var li = document.createElement("li");
+    li.innerHTML =
+        todoItem.who + " needs to " + todoItem.task + " by " + todoItem.dueDate;
+    ul.appendChild(li);
+    document.forms[0].reset();
 }
